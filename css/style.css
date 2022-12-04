@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
 a, a:visited{
     color: white;
@@ -8,16 +9,20 @@ a, a:visited{
 }
 
 body{
-     background: rgb(208,108,167);
-background: linear-gradient(45deg, rgba(208,108,167,1) 0%, rgba(57,154,232,1) 70%, rgba(92,249,241,1) 100%); 
+    /*background: rgb(208,108,167);
+    background: linear-gradient(45deg, rgba(208,108,167,1) 0%, rgba(57,154,232,1) 70%, rgba(92,249,241,1) 100%); */
+    background: #020f2a;  /* fallback for old browsers */
+    /*background: -webkit-linear-gradient(to right, #7a2828, #a73737);  Chrome 10-25, Safari 5.1-6 */
+    /*background: linear-gradient(to right, #7a2828, #a73737);  W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     font-family: 'Montserrat', sans-serif;
 }
 
 footer{
+    background: #010816;
     text-align: center;
 }
 h2{
-    border-bottom: 2px white groove;
+    border-bottom: 2px white groove; /*111929 */
     color: white;
     padding-bottom: 10px;
     margin-bottom: 10px;
@@ -28,17 +33,16 @@ li, #tercer-puesto p,#final p{
 }
 
 main{
-    padding: 15px;
-    padding-top: 3em;
+    padding-top: 20px;
 }
 
 nav{
+    background: #460065;
     position: fixed;
     width: 100%;
 }
 
 nav, footer{
-    background: #2c3e50;
     color: white;
     padding: 10px 0px;
 }
@@ -55,29 +59,32 @@ nav a:hover{
 }
 
 section{
-    margin: 10px auto;
+    padding: 15px;
 }
 
 ul{
     list-style-type: none;
 }
 
+.fecha{
+    font-size: 12px;
+}
+
 .grupos{
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    align-content: end;
 }
 
 .grupo{
     border-radius: 10px;
-    margin: auto 10px;
+    margin: 10px;
     padding-top: 5px;
-    width: auto;
 }
+
 .grupo-cabecera{
-    background: #69bff8;
+    /*background: #69bff8;*/
+    background: #020f2a;  /* fallback for old browsers */
     border-radius: 6px 6px 0 0;
     color: white;
     text-align: center;
@@ -91,12 +98,16 @@ ul{
     padding: 3px 10px 10px;
 }
 
-.grupo-fila, ul li, #tercer-puesto p, #final p{
+.filas .grupo-fila, .filas li, .filas{
     background: rgb(218, 218, 218);
 }
 
-.grupo-cuerpo .grupo-fila:nth-child(even), ul li:nth-child(even){
+.filas .grupo-fila:nth-child(even), .filas li:nth-child(even){
     background: #fff;
+}
+
+.fila:hover{
+    box-shadow: 0px 0px 5px grey;   
 }
 
 .centrar-contenido{
@@ -106,7 +117,6 @@ ul{
 
 .en-fila{
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
 }
@@ -117,4 +127,34 @@ ul{
 
 .resultados p:nth-child(odd){
     font-weight: bold;
+}
+
+.titulo-principal{
+    background: #550065;
+}
+
+#fase-grupos{
+    background-image: linear-gradient( 90deg,  rgba(255,244,228,1) 7.1%, rgba(240,246,238,1) 67.4% );
+}
+
+#fase-grupos h2{
+    color: black;
+    font-weight: bolder;
+}
+
+@media only screen and (max-width: 768px) {
+
+    nav{
+        align-content: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    main{
+    padding-top: 85px;
+    }
+    .equipos{
+        font-size: 12px;
+    }
 }
