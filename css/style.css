@@ -146,7 +146,14 @@ ul{
 .resultados p:nth-child(odd){
     font-weight: bold;
 }
-
+.resultado-ganador{
+    background: #43a047;
+    border-radius: 6px;
+    color: white;
+    font-weight: bolder;
+    padding: 5px 7px;
+    text-shadow: 1px 1px 2px black;
+}
 .titulo-principal{
     background: #550065;
 }
@@ -167,72 +174,78 @@ ul{
     scroll-margin-top: 25px;
 }
 
-/*Aqui empiezan los Media Queries*/
-
-@media only screen and (max-width: 520px){
-    main{
-    padding-top: 65px !important;
-    }
-
-    #fase-grupos{
-        scroll-margin-top: 85px;
-    }
-    #top, #octavos, #cuartos{
-    scroll-margin-top: 65px;
-    }
+.ul-flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
-@media only screen and (max-width: 602px) {
+.ul-flex li{
+    background: rgb(218, 218, 218);
+    border-radius: 6px;
+    margin: 5px;
+    width: 45%;
+}
+
+/*Aqui empiezan los Media Queries*/
+@media screen and (min-width: 400px) and (max-width: 768px){
     nav{
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
     }
 
-    nav a{
-        padding: 5px;
-    }
-
     main{
-    padding-top: 40px;
+        padding-top: 90px;
     }
 
-    .resultados{
-        font-size: 12px;
-    }
-
-    .grupo{
-        max-width: 440px;
-    }
-
-    .grupos{
-        display: flex;
-        flex-direction: column;
-        align-content: center;
-    }
-}
-
-@media only screen and (min-width: 810px){
     .bandera-local img, .bandera-visitante img{
         width: 80%;
     }
 
-    .equipos{
-        font-size: 13px;
+    .grupo, .ul-flex li{
+        max-width: 440px;
+        width: 90%;
+    }
+    p{
+        font-size: 14px;
     }
 
-    .grupo{
-        width: 45%;
+    .nombre-largo {
+      width: 70px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    #top, #fase-grupos, #octavos, #cuartos{
+        scroll-margin-top: 83px;
     }
 }
 
-
-@media only screen and (min-width: 1200px){
-    .equipos{
-        font-size: 15px;
+@media screen and (min-width: 769px) and (max-width: 1229px){
+    .grupo, .ul-flex li{
+        width: 45%;
     }
+    p{
+        font-size: 14px;
+    }
+    .nombre-largo {
+      width: 70px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+}
 
+@media screen and (min-width: 1230px){
     .grupo{
         width: 30%;
+    }
+    .nombre-largo {
+      width: 80px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 }
